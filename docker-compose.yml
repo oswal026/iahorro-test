@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: build/nginx/Dockerfile
+    container_name: iahorro-nginx
+    volumes:
+      - ./iahorro-app/:/var/www/iahorro-app/
+    ports:
+      - 8001:80
+    networks:
+      - iahorro
+  php:
+    build:
+      context: .
+      dockerfile: build/php/Dockerfile
+    container_name: iahorro-php
+    volumes:
+      - ./iahorro-app/:/var/www/iahorro-app/
+    depends_on:
+      - mysql
+    networks:
+      - iahorro
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    hostname: mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: iahorro
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - 127.0.0.1:3306:3306
+    volumes:
+      - ./mysql:/var/lib/mysql
+    networks:
+      - iahorro
+networks:
+    iahorro:

@@ -1,0 +1,89 @@
+{
+	"variables": [],
+	"info": {
+		"name": "iahorro - API REST",
+		"_postman_id": "0687a2e4-c11e-12f0-79d3-d7ee63ea6b0c",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add mortgage request",
+			"request": {
+				"url": "{{serverUrl}}/api/mortgage/store",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"first_name\":\"Jose\", \n\t\"last_name\":\"Perez\", \n\t\"email\": \"jpm@gmail.com\",\n\t\"phone\": \"622323524\", \n\t\"net_income\": 2100, \n\t\"amount\": 50000, \n\t\"time_zones_id\": 1\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get mortgage requests by expert ID",
+			"request": {
+				"url": "{{serverUrl}}/api/mortgage/expert/1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nombre\":\"Concierto 2\", \n\t\"fecha\":\"2021-06-15\", \n\t\"id_recinto\": 1,\n\t\"id_grupos\": [2], \n\t\"numero_espectadores\": 1500, \n\t\"id_promotor\": 1, \n\t\"id_medios\": [1,2],\n\t\"email\" : \"oswal026gmail.com\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get base data",
+			"request": {
+				"url": "{{serverUrl}}/api/mortgage/base-data",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nombre\":\"Concierto 2\", \n\t\"fecha\":\"2021-06-15\", \n\t\"id_recinto\": 1,\n\t\"id_grupos\": [2], \n\t\"numero_espectadores\": 1500, \n\t\"id_promotor\": 1, \n\t\"id_medios\": [1,2],\n\t\"email\" : \"oswal026gmail.com\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
